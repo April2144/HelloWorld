@@ -2,11 +2,11 @@
 //  NoteEditView.swift
 //  HelloWorld
 //
-//  📚 对应章节：3.6 表单与输入（Form / TextField / 表单验证）
+//  📝 对应笔记：3.6 表单与输入（Form / TextField / 表单验证）
 //           3.4 状态管理（@State 本地状态、@Environment 读取 dismiss）
 //           2.6 可选类型（note 为 nil 表示新建）
 //
-//  教学要点：
+//  要点记录：
 //  - Form 是 iOS 设置类界面的标准容器（3.6 一）
 //  - TextField 双向绑定用 $（3.6 二）
 //  - 表单验证：非法时禁用保存按钮 + 给出提示（3.6 九）

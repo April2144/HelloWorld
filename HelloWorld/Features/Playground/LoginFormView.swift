@@ -1,16 +1,16 @@
 //
-//  LoginDemoView.swift
+//  LoginFormView.swift
 //  HelloWorld
 //
-//  📚 对应章节：3.4 状态管理（八、状态提升与单向数据流 ｜ 九、综合示例：登录表单）
+//  📝 对应笔记：3.4 状态管理（八、状态提升与单向数据流 ｜ 九、综合示例：登录表单）
 //           3.6 表单与输入（TextField / SecureField / 表单验证）
 //
-//  这一页专门演示「状态提升（State Hoisting）」这个最容易绕晕的概念：
+//  这一页记的是「状态提升（State Hoisting）」这个最容易绕晕的概念：
 //
 //   ❌ 常见误区：每个输入框自己 @State 存值 → 父视图拿不到、也没法统一校验
 //   ✅ 正确做法：值放在"共同父视图"，子组件只拿 @Binding（单向数据流）
 //
-//      LoginDemoView（持有真数据）
+//      LoginFormView（持有真数据）
 //          │  $email ─────────►  LoginField（只负责显示和改）
 //          │  $password ──────►  LoginField
 //          │  ◄─── 通过 Binding 把改动写回来 ───┘
@@ -20,7 +20,7 @@
 
 import SwiftUI
 
-struct LoginDemoView: View {
+struct LoginFormView: View {
     // MARK: - 真数据放在父视图（状态提升）
     @State private var email = ""
     @State private var password = ""
@@ -86,7 +86,7 @@ struct LoginDemoView: View {
     }
 
     private func login() {
-        // 真实项目这里会调接口；demo 里直接把邮箱前缀当作用户名
+        // 真实项目这里会调接口；这里直接把邮箱前缀当作用户名
         loggedInName = email.components(separatedBy: "@").first ?? email
     }
 }
@@ -111,6 +111,6 @@ private struct LoginField: View {
 
 #Preview {
     NavigationStack {
-        LoginDemoView()
+        LoginFormView()
     }
 }

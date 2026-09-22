@@ -2,10 +2,10 @@
 //  FileJSONNoteStore.swift
 //  HelloWorld
 //
-//  📚 对应章节：4.2 文件读写（沙盒机制、获取目录路径、JSON 文件读写、封装文件管理类）
+//  📝 对应笔记：4.2 文件读写（沙盒机制、获取目录路径、JSON 文件读写、封装文件管理类）
 //           2.6 错误处理与可选类型（do-catch / try? / 可选绑定）
 //
-//  教学要点：
+//  要点记录：
 //  - iOS 沙盒：每个 App 只能访问自己的目录（4.2「一、iOS 沙盒机制」）
 //  - 用 FileManager 拿 Documents 目录（4.2「二、获取目录路径」）
 //  - JSON 读写 = JSONEncoder / JSONDecoder + Data 写入（4.2「七、JSON 文件读写」）
@@ -38,7 +38,7 @@ final class FileJSONNoteStore: NoteStore {
     func saveAll(_ notes: [Note]) throws {
         let data: Data
         do {
-            // 输出格式化 JSON，方便在 Finder 里打开看（教学用）
+            // 输出格式化 JSON，方便在 Finder 里打开看（方便自己查看）
             let encoder = JSONEncoder()
             encoder.outputFormatting = [.prettyPrinted, .sortedKeys]
             data = try encoder.encode(notes)

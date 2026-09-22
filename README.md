@@ -1,130 +1,91 @@
-# HelloWorld —— 《iOS 开发：从 0 到上架》配套 Demo
+# HelloWorld
 
-> 这是专题 **「iOS 开发：从 0 到上架」前五章（基础篇）** 的可运行配套工程。
-> 每个 Swift 文件的顶部都写了 `📚 对应章节：x.x …`，照着章节找文件即可。
->
-> 仓库里有两样东西：
-> 1. **HelloWorld/** —— 完整的 SwiftUI App（前五章知识点跑在真实界面里）
-> 2. **SwiftBasics.playground/** —— 第 2 章 Swift 语法的 6 页练习册（打开即学，改代码看结果）
+一个**离线笔记 App**。这是我学 iOS 时顺手做的，顺便把当时记下的一些写法放在里面。
 
-## 怎么用
+> 不是教程，也不以教学为目的 —— 只是自己的**笔记分享**。
+> 每个 Swift 文件顶部都写了 `📝 对应笔记：x.x …`，指的是我写《iOS 开发：从 0 到上架》那组笔记时的对应篇目，方便回查。
 
-1. 用 Xcode 打开 `HelloWorld.xcodeproj`
-2. 选一个模拟器（iPhone 16 及以上）→ `⌘R` 运行
-3. 想看某个知识点：看文件顶部注释 → 跳到对应章节
+## 里面有什么
 
-App 一共三个 Tab：
+| Tab | 记了什么 |
+|---|---|
+| **笔记** | 列表 → 详情 → 编辑，增删改查与导航 |
+| **组件** | 一些 SwiftUI 布局与组件的写法速查，另有几个笔记页的入口 |
+| **设置** | 状态管理相关的几种写法，以及三种本地存储方案的切换 |
 
-| Tab | 看什么 | 对应章节 |
-|---|---|---|
-| **笔记** | 列表 → 详情 → 编辑，整套导航与增删改查 | 3.5、3.6、2.6 |
-| **组件** | UI 手册：布局与常用组件的写法对照 | 3.2、3.3 |
-| **设置** | ⭐️ 状态管理全家桶 + 三种存储方案切换 | 3.4、4.1、4.2、4.3、4.5 |
+> 首次打开「笔记」是空的，点 **「载入示例数据」** 可以看到效果。
 
-> 首次进「笔记」是空的，点 **「载入示例数据」** 即可看到效果。
-
-## 目录结构 × 章节映射
+## 目录
 
 ```
 HelloWorld/
-├─ HelloWorldApp.swift              @main 入口（1.4）
-├─ ContentView.swift                1.4 你的第一个 Hello World（保留作为起点纪念）
-│
+├─ HelloWorldApp.swift          入口
+├─ ContentView.swift            第一个 Hello World 界面（留着做个念想）
 ├─ App/
-│  ├─ RootTabView.swift             3.5 TabView ｜ 3.4 @StateObject / @EnvironmentObject
-│  └─ AppSettings.swift             3.4 @Published ｜ 4.1 UserDefaults 封装
-│
+│  ├─ RootTabView.swift         TabView + 环境对象的注入
+│  └─ AppSettings.swift         全局设置（UserDefaults 持久化）+ 存储方案切换
 ├─ Data/
-│  ├─ Note.swift                    2.4 struct 值类型 ｜ 2.5 Codable
-│  ├─ NoteStore.swift               2.5 协议抽象 ｜ 2.6 throws / 自定义错误
-│  ├─ UserDefaultsNoteStore.swift   4.1 UserDefaults（含存储自定义对象）
-│  ├─ FileJSONNoteStore.swift       4.2 沙盒 / 文件路径 / JSON 读写
-│  └─ CoreDataNoteStore.swift       4.3 Core Data（代码构造 model，无需 .xcdatamodeld）
-│
+│  ├─ Note.swift                笔记模型
+│  ├─ NoteStore.swift           存储协议与错误定义
+│  ├─ UserDefaultsNoteStore.swift
+│  ├─ FileJSONNoteStore.swift
+│  └─ CoreDataNoteStore.swift
 └─ Features/
-   ├─ Notes/
-   │  ├─ NoteListView.swift         3.5 List / ForEach / NavigationStack / NavigationPath
-   │  ├─ NoteDetailView.swift       3.5 导航传值 / 标题与工具栏
-   │  └─ NoteEditView.swift         3.6 Form / TextField / 表单验证
-   ├─ Settings/
-   │  └─ SettingsView.swift         ⭐️ 3.4 @State·@Binding·@EnvironmentObject·@AppStorage
-   ├─ Gallery/
-   │  ├─ ComponentGalleryView.swift      3.2 布局 ｜ 3.3 组件与组合（含各演示入口）
-   │  └─ FormControlsView.swift          3.6 全表单控件 + 表单验证
-   └─ Playground/
-      ├─ OptionalErrorPlaygroundView.swift  2.6 可选类型与错误处理（代码→真跑出的结果）
-      └─ LoginDemoView.swift                3.4 状态提升 / 单向数据流（登录表单）
+   ├─ Notes/                    笔记列表 · 详情 · 编辑
+   ├─ Settings/                 设置页（状态管理几种写法都在这里）
+   ├─ Gallery/                  组件速查 · 表单控件
+   └─ Playground/               可选类型与错误处理 · 登录表单
 ```
 
-## 按章节的学习顺序（建议）
+## 笔记索引
 
-| 章节 | 先看哪个文件 | 重点看什么 |
+按我当时写笔记的顺序，对应到这里的目录：
+
+| 笔记 | 文件 | 当时记的重点 |
 |---|---|---|
-| 1.4 第一个项目 | `ContentView.swift` | 你最初的 Hello World |
+| 1.4 第一个项目 | `ContentView.swift` | 最开始的 Hello World |
 | 2.4 / 2.5 结构体与协议 | `Data/Note.swift`、`Data/NoteStore.swift` | 为什么用 struct；协议怎么让上层不依赖实现 |
-| **2.6 可选类型 / 错误处理** | `Features/Playground/OptionalErrorPlaygroundView.swift` | ⭐️ 12 个知识点，结果都是真跑出来的，可改代码试 |
-| 2.6 在真实场景里 | `Features/Notes/NoteListView.swift` 的 `do-catch` | 存储出错时怎么兜底 |
-| **3.4 状态管理** | `Features/Settings/SettingsView.swift` | ⭐️ 五个属性包装器的分工（文件里有对照表） |
-| 3.4 状态提升 / 单向数据流 | `Features/Playground/LoginDemoView.swift` | ⭐️ 为什么值要放父视图、子组件只拿 @Binding |
+| **2.6 可选类型与错误处理** | `Features/Playground/OptionalErrorPlaygroundView.swift` | 12 个知识点，结果由代码真实运行得出，可随手改 |
+| 2.6 在真实场景 | `Features/Notes/NoteListView.swift` 的 `do-catch` | 读写出错时怎么兜底 |
+| **3.2 / 3.3 布局与组件** | `Features/Gallery/ComponentGalleryView.swift` | 当速查表用 |
+| **3.4 状态管理** | `Features/Settings/SettingsView.swift` | 几个属性包装器的分工（文件里有对照表） |
+| 3.4 状态提升 | `Features/Playground/LoginFormView.swift` | 值放父视图、子组件只拿 Binding 的好处 |
 | **3.5 列表与导航** | `Features/Notes/NoteListView.swift` | NavigationPath 多级跳转 |
-| 3.6 表单与输入 | `Features/Gallery/FormControlsView.swift` | ⭐️ 全控件（TextField/SecureField/Toggle/Picker/Stepper/Slider/DatePicker）+ 验证 |
-| 3.6 在真实场景里 | `Features/Notes/NoteEditView.swift` | 新建/编辑笔记的表单 |
-| 3.2 / 3.3 布局与组件 | `Features/Gallery/ComponentGalleryView.swift` | 当 UI 手册查 |
-| **4.1 / 4.2 / 4.3** | `Data/` 下三个 Store | 在「设置」里切换，同一套界面不同存储 |
+| 3.6 表单与输入 | `Features/Gallery/FormControlsView.swift` | 各种输入控件 + 校验 |
+| 3.6 在真实场景 | `Features/Notes/NoteEditView.swift` | 新建/编辑笔记的表单 |
+| **4.1 / 4.2 / 4.3** | `Data/` 下三个 Store | 设置页可切换，同一套界面不同存储 |
 | 4.5 本地数据设计 | `App/AppSettings.swift` 的 `makeStore()` | 面向协议带来的可替换性 |
-| 5.x 打包上架 | —— | 流程类内容，建议看专题图文 + 录屏，不做进代码 |
+| 5.x 打包上架 | —— | 流程类的内容我没放进代码 |
 
-## 两个刻意的设计
+## Swift 语法笔记（第 2 章）
 
-1. **Core Data 用代码构造模型**（`CoreDataNoteStore.makeModel()`）
-   真实项目请在 Xcode 里建 `.xcdatamodeld`（见 4.3「三、创建数据模型」）；
-   本 demo 为了「clone 下来就能编译」才用代码构造，省掉一个资源文件依赖。
-
-2. **只做离线，不接网络**
-   基础篇的目标是「独立完成并上架一个**离线** App」，所以没有网络层；
-   网络、内购、性能等属于进阶篇，后续再加。
-
-## Swift 语法练习包（第 2 章）
-
-前五章里，**第 2 章 Swift 语法**的代码示例在文章里已经很密（每篇 23~34 个代码块），
-所以单独做成 Playground，不塞进 App —— 免得主工程变成"语法垃圾场"。
+第 2 章的语法点比较碎，单独放在 Playground 里，不塞进 App。
 
 ```
 SwiftBasics.playground/
-├─ 01-变量常量与数据类型.xcplaygroundpage    2.1
-├─ 02-运算符与流程控制.xcplaygroundpage      2.2
-├─ 03-函数与闭包.xcplaygroundpage            2.3
-├─ 04-类与结构体.xcplaygroundpage            2.4  ⭐️ 值类型 vs 引用类型
-├─ 05-枚举与协议.xcplaygroundpage            2.5  ⭐️ 面向协议编程实战
-└─ 06-可选类型与错误处理.xcplaygroundpage    2.6  ⭐️ 别再写 ! 了
+├─ 01-变量常量与数据类型.xcplaygroundpage
+├─ 02-运算符与流程控制.xcplaygroundpage
+├─ 03-函数与闭包.xcplaygroundpage
+├─ 04-类与结构体.xcplaygroundpage      值类型 vs 引用类型
+├─ 05-枚举与协议.xcplaygroundpage      面向协议那套写法
+└─ 06-可选类型与错误处理.xcplaygroundpage
 ```
 
-用法：双击 `SwiftBasics.playground` → 左侧选页 → 按 `▶` 运行 → 看右侧结果。
-每页都由「示例代码 + print 输出」组成，**改代码 → 结果立刻变**，适合边看文章边试。
+双击 `SwiftBasics.playground`，左边选页，按 `▶` 跑，右边看输出。
+每页都是「代码 + print 结果」，改一改就能看到变化。
 
-## 后续可加（进阶篇预告）
+## 两处刻意的处理
 
-- 6.x 架构：把 `NoteStore` 再往上抽一层 `NoteRepository` + 依赖注入
-- 7.x 网络层：`URLSession` + `Codable` + `async/await`
-- 8.x 性能：列表懒加载、图片缓存
-- 9.x 内购：StoreKit 2
+1. **Core Data 用代码构造模型**（`CoreDataNoteStore.makeModel()`）
+   正常做法是在 Xcode 里建 `.xcdatamodeld`；这里为了 clone 下来就能跑，用代码构造，省掉一个资源文件依赖。
+2. **只做离线，不接网络**
+   基础篇的目标本来就是做出一个纯离线 App，网络、内购那些后面再说。
 
-## 仓库设置（GitHub 网页端）
+## 顺手记下的两个坑
 
-> Description 与 Topics 需要在网页端设置（命令行需要 `gh` CLI 与 token）。文案已备好：
-
-- **Description（简介）** —— 复制这段：
-
-  ```
-  《iOS 开发：从 0 到上架》前五章配套 Demo：SwiftUI App + Swift 语法 Playground，每个文件都标注了对应章节
-  ```
-
-- **Topics（标签）** —— 依次添加：
-
-  `swiftui` `ios` `swift` `tutorial` `demo` `ios-development` `learning`
-
-- **直达链接**：<https://github.com/April2144/HelloWorld>
+- `@Published` 来自 **Combine**，只写 `import SwiftUI` 在新版编译器下会报「类型不遵循 ObservableObject」。
+- **字符串插值必须用半角 `)` 闭合**，写成中文全角 `）` 会报 `Unterminated string literal`，而且报错位置指不到真正原因 —— 中文输入法下很容易踩。
 
 ## License
 
-[MIT](LICENSE) © 2026 April —— 教学用途，随意取用。
+[MIT](LICENSE) © 2026 April —— 个人笔记，仅供参考，随意取用。

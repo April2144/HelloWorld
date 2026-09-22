@@ -2,10 +2,10 @@
 //  RootTabView.swift
 //  HelloWorld
 //
-//  📚 对应章节：3.5 列表与导航（九、标签页 TabView）
+//  📝 对应笔记：3.5 列表与导航（九、标签页 TabView）
 //           3.4 状态管理（@StateObject 创建、@EnvironmentObject 注入）
 //
-//  教学要点：
+//  要点记录：
 //  - TabView 是大多数 App 的骨架（3.5）
 //  - @StateObject：在这里"创建"全局设置（只创建一次，App 期间一直存活）
 //  - .environmentObject：注入后，任意层级的子页面都能用 @EnvironmentObject 拿到（3.4）

@@ -1,6 +1,6 @@
 //
 //  01 变量、常量与数据类型
-//  📚 对应章节：2.1
+//  📝 对应笔记：2.1
 //
 //  玩法：Xcode 里打开 SwiftBasics.playground，选这一页按 ▶ 运行；
 //      看右侧「结果」栏的输出，改一改数值再运行，观察变化。
@@ -131,4 +131,4 @@ let multiline = """
 """
 print(multiline)
 
-print("\n✅ 2.1 完。动手试试：把 let 改成 var 再改值、或让 Int 和 Double 相加看报什么错。")
+print("\n✅ 2.1 完。随手改改看：把 let 改成 var 再改值、或让 Int 和 Double 相加看报什么错。")

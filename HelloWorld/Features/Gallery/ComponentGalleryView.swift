@@ -2,10 +2,10 @@
 //  ComponentGalleryView.swift
 //  HelloWorld
 //
-//  📚 对应章节：3.2 UI 布局（VStack / HStack / ZStack / Spacer / padding / frame / 布局优先级）
+//  📝 对应笔记：3.2 UI 布局（VStack / HStack / ZStack / Spacer / padding / frame / 布局优先级）
 //           3.3 常用组件（Text / Image / Button / 颜色系统 / 字体与排版 / 组件组合）
 //
-//  用法：把这个页面当成「UI 手册」—— 看到某个效果想不起来怎么写，来这里对照。
+//  用法：把这个页面当成「UI 速查」—— 看到某个效果想不起来怎么写，来这里对照。
 //
 
 import SwiftUI
@@ -14,7 +14,7 @@ struct ComponentGalleryView: View {
     var body: some View {
         NavigationStack {
             List {
-                // MARK: - 其它章节的演示入口
+                // MARK: - 其它章节的笔记入口
                 Section {
                     NavigationLink {
                         FormControlsView()
@@ -27,12 +27,12 @@ struct ComponentGalleryView: View {
                         Label("可选类型与错误处理（2.6）", systemImage: "questionmark.circle")
                     }
                     NavigationLink {
-                        LoginDemoView()
+                        LoginFormView()
                     } label: {
                         Label("登录表单：状态提升（3.4）", systemImage: "person.badge.key")
                     }
                 } header: {
-                    Text("更多章节演示")
+                    Text("更多笔记页")
                 } footer: {
                     Text("本页放不下的知识点单独成页，点进去看。")
                 }
@@ -106,7 +106,7 @@ struct ComponentGalleryView: View {
                     Text("真实界面就是这几种组合的堆叠 —— 单看组件没感觉，组合起来才是页面。")
                 }
             }
-            .navigationTitle("组件手册")
+            .navigationTitle("组件速查")
         }
     }
 }

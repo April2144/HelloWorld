@@ -2,10 +2,10 @@
 //  NoteDetailView.swift
 //  HelloWorld
 //
-//  📚 对应章节：3.5 列表与导航（导航传值、导航标题与工具栏、导航返回）
+//  📝 对应笔记：3.5 列表与导航（导航传值、导航标题与工具栏、导航返回）
 //           3.2 UI 布局（VStack / padding / frame）
 //
-//  教学要点：
+//  要点记录：
 //  - 上一级用 NavigationLink(value: note) 传进来，这里直接拿到模型（3.5 五）
 //  - .navigationTitle / .toolbar：导航栏标题与按钮（3.5 六）
 //  - 由父视图控制编辑（sheet），自己不持有数据 → 单向数据流（3.4 八）

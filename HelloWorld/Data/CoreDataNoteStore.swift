@@ -2,11 +2,11 @@
 //  CoreDataNoteStore.swift
 //  HelloWorld
 //
-//  📚 对应章节：4.3 Core Data 入门（核心概念、PersistentContainer、增删改查）
+//  📝 对应笔记：4.3 Core Data 入门（核心概念、PersistentContainer、增删改查）
 //
-//  教学要点：
+//  要点记录：
 //  - 标准做法是在 Xcode 里建 .xcdatamodeld 模型文件；
-//    本 demo 为了"零新增资源文件、clone 即可编译"，改用**代码构造 NSManagedObjectModel**。
+//    这个工程为了"零新增资源文件、clone 即可编译"，改用**代码构造 NSManagedObjectModel**。
 //    ⚠️ 你在真实项目里请用 Xcode 的 Data Model 编辑器（4.3「三、创建数据模型」）。
 //  - 增删改查四件套：insert / fetch / 改属性后 save / delete 后 save（4.3 五~八）
 //
@@ -25,7 +25,7 @@ final class CoreDataNoteStore: NoteStore {
                                           managedObjectModel: Self.makeModel())
         container.loadPersistentStores { _, error in
             if let error {
-                // 教学演示：真实项目应做降级或提示，而不是默默 print
+                // 这里先简单 print，真实项目应做降级或提示
                 print("⚠️ Core Data 加载失败：\(error.localizedDescription)")
             }
         }
@@ -79,7 +79,7 @@ final class CoreDataNoteStore: NoteStore {
     }
 
     func saveAll(_ notes: [Note]) throws {
-        // 演示用：全量覆盖 —— 先删再插
+        // 这里用全量覆盖 —— 先删再插
         let context = container.viewContext
         let existing = try context.fetch(NSFetchRequest<NSManagedObject>(entityName: "NoteEntity"))
         existing.forEach { context.delete($0) }

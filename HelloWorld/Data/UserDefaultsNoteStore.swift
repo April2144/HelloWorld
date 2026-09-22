@@ -2,9 +2,9 @@
 //  UserDefaultsNoteStore.swift
 //  HelloWorld
 //
-//  📚 对应章节：4.1 UserDefaults 轻量存储（存储自定义对象、封装管理类）
+//  📝 对应笔记：4.1 UserDefaults 轻量存储（存储自定义对象、封装管理类）
 //
-//  教学要点：
+//  要点记录：
 //  - UserDefaults 只适合"少量、轻量"的数据（设置项、开关），不适合大量笔记
 //  - 存自定义对象要先 Codable → JSON Data（4.1「六、存储自定义对象」）
 //  - 把 key 集中管理，别散落在各处（4.1「七、封装 UserDefaults 管理类」）

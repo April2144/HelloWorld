@@ -2,9 +2,9 @@
 //  FormControlsView.swift
 //  HelloWorld
 //
-//  📚 对应章节：3.6 表单与输入（全控件 + 表单验证 + 综合示例）
+//  📝 对应笔记：3.6 表单与输入（全控件 + 表单验证 + 综合示例）
 //
-//  教学要点：
+//  要点记录：
 //  - 3.6 从头到尾的所有输入控件，一页看全：
 //    TextField / SecureField / Toggle / Picker / Stepper / Slider / DatePicker
 //  - 3.6「九、表单验证」：边输边校验，不合法就禁用提交并给出原因

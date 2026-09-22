@@ -2,11 +2,11 @@
 //  NoteListView.swift
 //  HelloWorld
 //
-//  📚 对应章节：3.5 列表与导航（List / ForEach / NavigationStack / NavigationPath / 导航传值）
+//  📝 对应笔记：3.5 列表与导航（List / ForEach / NavigationStack / NavigationPath / 导航传值）
 //           2.6 错误处理与可选类型（do-catch / 可选绑定 guard let）
 //           4.5 本地数据设计（上层只依赖协议）
 //
-//  教学要点：
+//  要点记录：
 //  - List + ForEach：展示集合数据（3.5 一、二）
 //  - NavigationStack(path:)：用 NavigationPath 管理多级跳转（3.5 四、八）
 //  - NavigationLink(value:) + .navigationDestination(for:)：类型安全的传值（3.5 五）

@@ -2,10 +2,10 @@
 //  AppSettings.swift
 //  HelloWorld
 //
-//  📚 对应章节：3.4 状态管理（@Published / @StateObject / @EnvironmentObject）
+//  📝 对应笔记：3.4 状态管理（@Published / @StateObject / @EnvironmentObject）
 //           4.1 UserDefaults 轻量存储（与 SwiftUI 结合、封装属性包装器）
 //
-//  教学要点（这是整个 demo 最核心的一个文件，请对照 3.4 看）：
+//  要点记录（对应笔记 3.4，这个文件最值得看）：
 //  1. @Published：属性一变，用到它的视图自动刷新
 //  2. 由 RootTabView 用 @StateObject 创建（生命周期跟 App 一致，只创建一次）
 //  3. 子页面用 @EnvironmentObject 读取（跨页面共享，不用一层层传参）
@@ -31,7 +31,7 @@ enum StoreKind: String, CaseIterable, Identifiable {
         }
     }
 
-    /// 4.5 选型提示：让读者明白"什么时候该用哪个"
+    /// 4.5 选型提示：记一下什么时候该用哪个
     var hint: String {
         switch self {
         case .userDefaults: return "适合：设置项、开关、少量轻量数据"

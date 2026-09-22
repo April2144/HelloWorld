@@ -2,9 +2,9 @@
 //  SettingsView.swift
 //  HelloWorld
 //
-//  ⭐️ 这是整个 demo 最值得对照 3.4「状态管理」看的一个页面 ⭐️
+//  ⭐️ 这是这个文件最值得对照笔记 3.4「状态管理」看的一个页面 ⭐️
 //
-//  📚 对应章节：3.4 状态管理（@State / @Binding / @StateObject / @EnvironmentObject / @Published）
+//  📝 对应笔记：3.4 状态管理（@State / @Binding / @StateObject / @EnvironmentObject / @Published）
 //           3.6 表单与输入（Toggle / Slider / Stepper / Picker）
 //           4.1 UserDefaults（@AppStorage 属性包装器封装）
 //
@@ -70,9 +70,9 @@ struct SettingsView: View {
                     Text("存储方案（4.1 / 4.2 / 4.3）")
                 }
 
-                // MARK: - 4.1 @AppStorage 演示
+                // MARK: - 4.1 @AppStorage
                 Section {
-                    AppStorageDemoRow()
+                    AppStorageRow()
                     Text("@AppStorage 是 UserDefaults 的属性包装器封装（4.1 八），适合单个开关/计数这种小数据。")
                         .font(.footnote)
                         .foregroundStyle(.secondary)
@@ -100,7 +100,7 @@ struct SettingsView: View {
     }
 }
 
-// MARK: - 3.4 @Binding 演示组件
+// MARK: - 3.4 @Binding 组件
 
 /// 自己不持有数据，通过 @Binding 读写父级的值
 private struct ToggleRow: View {
@@ -125,11 +125,11 @@ private struct FontSizeRow: View {
     }
 }
 
-// MARK: - 4.1 @AppStorage 演示组件
+// MARK: - 4.1 @AppStorage组件
 
-private struct AppStorageDemoRow: View {
+private struct AppStorageRow: View {
     /// 4.1「八、属性包装器封装」：@AppStorage 直接把 UserDefaults 变成可读写的状态
-    @AppStorage("hean.demo.tapCount") private var tapCount = 0
+    @AppStorage("hean.settings.tapCount") private var tapCount = 0
 
     var body: some View {
         HStack {

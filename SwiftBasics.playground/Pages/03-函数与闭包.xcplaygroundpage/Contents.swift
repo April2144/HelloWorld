@@ -1,6 +1,6 @@
 //
 //  03 函数与闭包
-//  📚 对应章节：2.3
+//  📝 对应笔记：2.3
 //
 
 import Foundation
@@ -167,4 +167,4 @@ let bonusTotal = scores.filter { $0 >= 60 }.map { $0 / 10 }.reduce(0, +)
 print("   链式：及格者的「分数/10」之和 =", bonusTotal)
 
 sleep(1)   // 等一下逃逸闭包的异步回调打印完
-print("\n✅ 2.3 完。动手试试：给 sum 传更多或少参数、或把 @escaping 去掉看报什么错。")
+print("\n✅ 2.3 完。随手改改看：给 sum 传更多或少参数、或把 @escaping 去掉看报什么错。")

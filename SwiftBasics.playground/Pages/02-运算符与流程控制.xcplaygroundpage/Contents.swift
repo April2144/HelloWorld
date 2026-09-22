@@ -1,6 +1,6 @@
 //
 //  02 运算符与流程控制
-//  📚 对应章节：2.2
+//  📝 对应笔记：2.2
 //
 
 import Foundation
@@ -176,4 +176,4 @@ outer: for i in 1...3 {
     }
 }
 
-print("\n✅ 2.2 完。动手试试：把 switch 的 default 删掉看编译器怎么提醒你、或写个会贯穿的 case 试试。")
+print("\n✅ 2.2 完。随手改改看：把 switch 的 default 删掉看编译器怎么提醒你、或写个会贯穿的 case 试试。")

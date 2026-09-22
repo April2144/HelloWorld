@@ -2,9 +2,9 @@
 //  OptionalErrorPlaygroundView.swift
 //  HelloWorld
 //
-//  📚 对应章节：2.6 错误处理与可选类型（全篇）
+//  📝 对应笔记：2.6 错误处理与可选类型（全篇）
 //
-//  教学要点：
+//  要点记录：
 //  - 这一页的「运行结果」不是写死的文字，而是**页面里真跑出来的**（见 buildSnippets()）
 //  - 覆盖 2.6 全部知识点：可选绑定 / guard / 可选链 / nil 合并 / 隐式解包 /
 //    do-catch / try 的三种形式 / throws 传播 / Result / defer / 自定义错误
@@ -70,7 +70,7 @@ extension OptionalErrorPlaygroundView {
     }
 
     /// 2.6 自定义错误
-    private enum DemoError: Error, LocalizedError {
+    private enum ValidationError: Error, LocalizedError {
         case emptyName
         case tooShort(Int)
 
@@ -84,8 +84,8 @@ extension OptionalErrorPlaygroundView {
 
     /// 2.6 throws 函数
     private static func validate(_ name: String, minLength: Int = 2) throws -> String {
-        guard !name.isEmpty else { throw DemoError.emptyName }
-        guard name.count >= minLength else { throw DemoError.tooShort(minLength) }
+        guard !name.isEmpty else { throw ValidationError.emptyName }
+        guard name.count >= minLength else { throw ValidationError.tooShort(minLength) }
         return "校验通过：\(name)"
     }
 
@@ -144,9 +144,9 @@ extension OptionalErrorPlaygroundView {
         ))
 
         // ⑤ 可选链
-        struct DemoUser { var city: String? }
-        let user: DemoUser? = DemoUser(city: "深圳")
-        let nilUser: DemoUser? = nil
+        struct Profile { var city: String? }
+        let user: Profile? = Profile(city: "深圳")
+        let nilUser: Profile? = nil
         out.append(Snippet(
             title: "⑤ 可选链 ?.",
             code: "user?.city        // user 有值\nnilUser?.city     // user 是 nil",
