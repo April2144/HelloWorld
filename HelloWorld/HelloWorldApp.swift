@@ -11,7 +11,9 @@ import SwiftUI
 struct HelloWorldApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            // 1.4 的 Hello World 保留在 ContentView.swift（那是你的第一个界面，别删）；
+            // 从这里开始进入正式 demo 骨架：TabView + 笔记 + 组件手册 + 设置。
+            RootTabView()
         }
     }
 }
