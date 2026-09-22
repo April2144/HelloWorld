@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<playground version='6.0' target-platform='macos' display-mode='raw' executeOnPageChanges='false'>
+   <pages>
+      <page name='01-变量常量与数据类型'/>
+      <page name='02-运算符与流程控制'/>
+      <page name='03-函数与闭包'/>
+      <page name='04-类与结构体'/>
+      <page name='05-枚举与协议'/>
+      <page name='06-可选类型与错误处理'/>
+   </pages>
+</playground>

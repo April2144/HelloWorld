@@ -2,6 +2,10 @@
 
 > 这是专题 **「iOS 开发：从 0 到上架」前五章（基础篇）** 的可运行配套工程。
 > 每个 Swift 文件的顶部都写了 `📚 对应章节：x.x …`，照着章节找文件即可。
+>
+> 仓库里有两样东西：
+> 1. **HelloWorld/** —— 完整的 SwiftUI App（前五章知识点跑在真实界面里）
+> 2. **SwiftBasics.playground/** —— 第 2 章 Swift 语法的 6 页练习册（打开即学，改代码看结果）
 
 ## 怎么用
 
@@ -80,9 +84,47 @@ HelloWorld/
    基础篇的目标是「独立完成并上架一个**离线** App」，所以没有网络层；
    网络、内购、性能等属于进阶篇，后续再加。
 
+## Swift 语法练习包（第 2 章）
+
+前五章里，**第 2 章 Swift 语法**的代码示例在文章里已经很密（每篇 23~34 个代码块），
+所以单独做成 Playground，不塞进 App —— 免得主工程变成"语法垃圾场"。
+
+```
+SwiftBasics.playground/
+├─ 01-变量常量与数据类型.xcplaygroundpage    2.1
+├─ 02-运算符与流程控制.xcplaygroundpage      2.2
+├─ 03-函数与闭包.xcplaygroundpage            2.3
+├─ 04-类与结构体.xcplaygroundpage            2.4  ⭐️ 值类型 vs 引用类型
+├─ 05-枚举与协议.xcplaygroundpage            2.5  ⭐️ 面向协议编程实战
+└─ 06-可选类型与错误处理.xcplaygroundpage    2.6  ⭐️ 别再写 ! 了
+```
+
+用法：双击 `SwiftBasics.playground` → 左侧选页 → 按 `▶` 运行 → 看右侧结果。
+每页都由「示例代码 + print 输出」组成，**改代码 → 结果立刻变**，适合边看文章边试。
+
 ## 后续可加（进阶篇预告）
 
 - 6.x 架构：把 `NoteStore` 再往上抽一层 `NoteRepository` + 依赖注入
 - 7.x 网络层：`URLSession` + `Codable` + `async/await`
 - 8.x 性能：列表懒加载、图片缓存
 - 9.x 内购：StoreKit 2
+
+## 仓库设置（GitHub 网页端）
+
+> Description 与 Topics 需要在网页端设置（命令行需要 `gh` CLI 与 token）。文案已备好：
+
+- **Description（简介）** —— 复制这段：
+
+  ```
+  《iOS 开发：从 0 到上架》前五章配套 Demo：SwiftUI App + Swift 语法 Playground，每个文件都标注了对应章节
+  ```
+
+- **Topics（标签）** —— 依次添加：
+
+  `swiftui` `ios` `swift` `tutorial` `demo` `ios-development` `learning`
+
+- **直达链接**：<https://github.com/April2144/HelloWorld>
+
+## License
+
+[MIT](LICENSE) © 2026 April —— 教学用途，随意取用。
