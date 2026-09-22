@@ -5,9 +5,10 @@
 //  📝 对应笔记：4.3 Core Data 入门（核心概念、PersistentContainer、增删改查）
 //
 //  要点记录：
-//  - 标准做法是在 Xcode 里建 .xcdatamodeld 模型文件；
-//    这个工程为了"零新增资源文件、clone 即可编译"，改用**代码构造 NSManagedObjectModel**。
-//    ⚠️ 你在真实项目里请用 Xcode 的 Data Model 编辑器（4.3「三、创建数据模型」）。
+//  - 数据模型在同目录的 **HeAnNotes.xcdatamodeld** —— Xcode 里点开就是模型编辑器
+//    （4.3「三、创建数据模型」，实体、属性、关系都在那里定义）
+//  - 初始化 PersistentContainer 时，name 对得上就会自动去 Bundle 里找同名模型：
+//    "HeAnNotes" → HeAnNotes.xcdatamodeld → 包内的 HeAnNotes.momd（4.3 四）
 //  - 增删改查四件套：insert / fetch / 改属性后 save / delete 后 save（4.3 五~八）
 //
 
@@ -20,9 +21,9 @@ final class CoreDataNoteStore: NoteStore {
     private let container: NSPersistentContainer
 
     init() {
-        // 4.3「四、初始化 PersistentContainer」：用代码构造的 model 初始化
-        container = NSPersistentContainer(name: "HeAnNotes",
-                                          managedObjectModel: Self.makeModel())
+        // 4.3「四、初始化 PersistentContainer」：
+        // 只给 name，Core Data 会自动在 Bundle 里找 HeAnNotes.momd（由 .xcdatamodeld 编译而来）
+        container = NSPersistentContainer(name: "HeAnNotes")
         container.loadPersistentStores { _, error in
             if let error {
                 // 这里先简单 print，真实项目应做降级或提示
@@ -30,34 +31,6 @@ final class CoreDataNoteStore: NoteStore {
             }
         }
         container.viewContext.automaticallyMergesChangesFromParent = true
-    }
-
-    // MARK: - 代码构造数据模型（替代 .xcdatamodeld）
-
-    private static func makeModel() -> NSManagedObjectModel {
-        let model = NSManagedObjectModel()
-
-        let entity = NSEntityDescription()
-        entity.name = "NoteEntity"
-        entity.managedObjectClassName = NSStringFromClass(NSManagedObject.self)
-
-        func attribute(_ name: String, _ type: NSAttributeType, optional: Bool = false) -> NSAttributeDescription {
-            let a = NSAttributeDescription()
-            a.name = name
-            a.attributeType = type
-            a.isOptional = optional
-            return a
-        }
-
-        entity.properties = [
-            attribute("id", .UUIDAttributeType),
-            attribute("title", .stringAttributeType),
-            attribute("body", .stringAttributeType),
-            attribute("updatedAt", .dateAttributeType),
-        ]
-
-        model.entities = [entity]
-        return model
     }
 
     // MARK: - NoteStore

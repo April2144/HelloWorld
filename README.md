@@ -76,8 +76,9 @@ SwiftBasics.playground/
 
 ## 两处刻意的处理
 
-1. **Core Data 用代码构造模型**（`CoreDataNoteStore.makeModel()`）
-   正常做法是在 Xcode 里建 `.xcdatamodeld`；这里为了 clone 下来就能跑，用代码构造，省掉一个资源文件依赖。
+1. **Core Data 用 Xcode 模型文件**（`HelloWorld/Data/HeAnNotes.xcdatamodeld`）
+   在 Xcode 里点开就是数据模型编辑器（实体 / 属性 / 关系都在那定义）。
+   `CoreDataNoteStore` 只需 `NSPersistentContainer(name: "HeAnNotes")` 一行即可加载它。
 2. **只做离线，不接网络**
    基础篇的目标本来就是做出一个纯离线 App，网络、内购那些后面再说。
 
